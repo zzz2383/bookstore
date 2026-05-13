@@ -1,0 +1,33 @@
+/* 解决页面比例不对、留白过多的问题 */
+html,
+body,
+#app {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* 防止出现双滚动条 */
+}
+
+/* 
+ * 让 Element Plus 的 Layout 布局组件默认撑满高度 
+ * 这样 el-container 的子组件才能正确计算高度
+ */
+.el-container {
+    height: 100%;
+}
+
+.el-header,
+.el-footer {
+    flex-shrink: 0;
+    /* 防止头部底部被压缩 */
+}
+
+.el-main {
+    padding: 20px;
+    overflow-y: auto;
+    /* 主内容区允许独立滚动 */
+    background-color: #f5f7fa;
+    /* 稍微给个背景色，方便看出边界 */
+}

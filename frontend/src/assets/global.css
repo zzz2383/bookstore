@@ -1,0 +1,115 @@
+/* 全局样式重置和布局设置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* 通用布局类 */
+.fill-parent {
+    width: 100%;
+    height: 100%;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.flex-grow {
+    flex: 1;
+    min-height: 0;
+    /* 修复Chrome中的flexbox溢出问题 */
+    min-width: 0;
+}
+
+/* Element Plus 布局组件适配 */
+.el-container {
+    height: 100%;
+}
+
+.el-header {
+    padding: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.el-aside {
+    background-color: #fff;
+    box-shadow: 1px 0 4px rgba(0, 0, 0, 0.1);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.el-main {
+    padding: 0;
+    overflow: auto;
+    background-color: #f5f7fa;
+}
+
+.el-footer {
+    padding: 0;
+    background-color: #fff;
+    border-top: 1px solid #dcdfe6;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a0a0a0;
+}
+
+/* 全局卡片样式 */
+.global-card {
+    margin: 20px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .el-aside {
+        width: 200px !important;
+    }
+
+    .global-card {
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .el-aside {
+        display: none;
+    }
+}
